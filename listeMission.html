@@ -1,0 +1,36 @@
+<section class="list">
+    <div class="container-fluid">
+        <div class="jumbotron" >
+            <h1> Liste des missions<span class="label label-info"></span></h1>   
+        </div> 
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><h4>Référence</h4></th>
+                    <th><h2>Mission</h2></th>
+                    <th><h2>Nom</h2></th>
+                    <th><h2>Date Prévue</h2></th>
+                    <th><h2>Date réelle</h2></th> 
+                    <th><h2>Action</h2></th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="mission in missions track by $index" >
+                    <td>{{mission.refContrat}}</td>
+                    <td>{{mission.missionInf}}</td>
+                    <td>{{mission.nom}}</td>
+                    <td>{{mission.datePrevue}}</td>
+                    <td>{{mission.dateReelle}}</td> 
+                    <td>
+                        <div class="btn-group">
+                            <button class="btn btn-danger" ng-click="deleteMission(mission._id)"><span class="glyphicon glyphicon-remove"></span></button>
+                            <button class="btn btn-info" ng-click="editMission(mission._id)"><span class="glyphicon glyphicon-edit"></span></button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>  
+</section>
